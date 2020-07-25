@@ -79,3 +79,46 @@ for(let i=0; i<notas.length;i++){
 }
 
 console.log(`la cantidade alumnos aprobados es ${aprobados}`)
+
+
+//Una compañía de transporte cuenta con cinco choferes, de los cuales se conoce: 
+//nombre, horas trabajadas cada día de la semana (seis días) y sueldo por hora. Realice un algoritmo que:
+//aCalcule el total de horas trabajadas a la semana para cada trabaja- dor.
+//bCalcule el sueldo semanal para cada uno de ellos.
+//Calcule el total que pagará la empresa.
+//Indique el nombre del trabajador que labora más horas el día lunes
+//Imprima un reporte con todos los datos anteriores.
+
+console.log("ejercicio 5.17")
+choferes=["juanita","lupita","carmencita","rosita","chabelita"]
+horasTrabajadasSemanal = [50,55,52,50,45]
+sueldoPorHora =[11,10,10.5,15,12]
+let sueldoSemanal=[]
+let pagoTotal=0
+
+console.log('las horas semanales por chofer son las siguientes:')
+for(let i=0;i<choferes.length;i++){
+   console.log(`${choferes[i]}:${horasTrabajadasSemanal[i]} horas`);
+   sueldo=horasTrabajadasSemanal[i]*sueldoPorHora[i]
+   sueldoSemanal.push(sueldo);
+  // console.log(`el sueldo de ${choferes[i]} es de ${sueldo}`);
+   pagoTotal+=sueldo;
+}
+
+console.log('A continuacion los sueldos semanales de cada chofer, respectivamente')
+console.log(sueldoSemanal)
+console.log(`la compania pagara en total ${pagoTotal}`)
+
+function choferMax(arregloChof, arregloHor){
+    let top = parseFloat(Math.max(...arregloHor))
+    let j = arregloHor.indexOf(top)
+    if(arregloChof.length == arregloHor.length){
+        console.log(`el chofer que trabaja mas es ${choferes[j]}`)
+    }
+}
+
+choferMax(choferes, horasTrabajadasSemanal)
+
+
+
+
